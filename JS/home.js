@@ -1,23 +1,35 @@
 
 //First Input Elements starts ---------------------------------
-
 document.getElementById('btn-first-input').addEventListener('click', function (event) {
   event.preventDefault();
 
   const inputFirstValue = getInputFieldValueById('first-input-number');
   const balanceFirst = getTextFieldValueById('first-input-balance');
   
-
+  
+  //Alert Function-------
+  if (isNaN(inputFirstValue)) {
+    alert('Invalid Donation amount');
+    return;
+  }
+ 
   if (typeof inputFirstValue === 'number') {
     const mainFirstBalance = getTextFieldValueById('available-first-balance');
     // Math version
     const totalValue = mainFirstBalance - inputFirstValue;
+
     const sumDonation = balanceFirst + inputFirstValue;
     
+    //Alert Function-------
+    if (inputFirstValue > mainFirstBalance) {
+      alert('Invalid Donation amount');
+      return;
+    }
+   
     document.getElementById('available-first-balance').innerText = totalValue;
     document.getElementById('first-input-balance').innerText = sumDonation;
-   
 
+   
     //History Notification---
     const div = document.createElement('p');
     div.innerHTML = `
@@ -31,6 +43,7 @@ document.getElementById('btn-first-input').addEventListener('click', function (e
   else {
     alert('you are failed')
   }
+  document.getElementById('first-input-number').value = '';
 })
 //First Input Elements ends---------------------------------------
 
@@ -65,6 +78,7 @@ document.getElementById('btn-second').addEventListener('click', function (event)
   else {
     alert('you are failed')
   }
+  document.getElementById('input-second').value = '';
 })
 //Third Input Element starts------------------------------------
 document.getElementById('btn-third-element').addEventListener('click', function (event) {
@@ -95,8 +109,9 @@ document.getElementById('btn-third-element').addEventListener('click', function 
     document.getElementById('history-add').appendChild(div);
   }
   else {
-    alert('you are failed')
+    alert('Invalid')
   }
+  document.getElementById('input-third').value = '';
 })
 
 //Third Input Element ends-------------------------------------
@@ -131,6 +146,7 @@ document.getElementById('btn-four-input').addEventListener('click', function (ev
   else {
     alert('you are failed')
   }
+  document.getElementById('input-four-element').value = '';
 })
 //Four Input Element ends------------------------------------
 //Five Input Element starts----------------------------------
@@ -164,6 +180,7 @@ document.getElementById('btn-five-value').addEventListener('click', function (ev
   else {
     alert('you are failed')
   }
+  document.getElementById('input-five-element').value = '';
 })
 //Five Input Element ends-----------------------------------------
 //change input elements-----------------

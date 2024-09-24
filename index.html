@@ -39,10 +39,10 @@
 </head>
 
 <body class="font-style">
-  <main class="bg-body w-full">
+  <main class="w-full mx-auto bg-white" bg-body w-full">
     <!-- Navbar section starts -->
-    <section class="sticky top-0 bg-body">
-      <div class="w-5/6 mx-auto grid grid-cols-3 py-5">
+    <section class="sticky top-0 ">
+      <div class="w-5/6 mx-auto grid grid-cols-3 bg-body py-5">
         <div class="col-span-1 text-left">
           <button id="blog-input-elements"
             class="btn bg-btn-color px-8 py-2 text-black font-semibold text-xl">Blog</button>
@@ -57,16 +57,16 @@
           <p class="font-bold text-black">BDT</p>
         </div>
       </div>
-      <div class="mx-auto w-full bg-body"></div>
+      <div class="text-center backdrop-blur-sm bg-white/30 py-5 ">
+        <button id="donation-tab" class="btn bg-btn-color py-2 px-8 font-semibold text-lg mr-3">Donation</button>
+        <button id="history-tab" class="btn py-2 px-8 font-semibold text-lg ml-3">History</button>
+      </div>
     </section>
     <!-- Navbar section ends -->
     <!-- Main section starts -->
     <section id="new-element-input" class="w-full mx-auto bg-white">
       <div class="w-5/6 mx-auto py-20">
-        <div class="text-center ">
-          <button id="donation-tab" class="btn bg-btn-color py-2 px-8 font-semibold text-lg mr-3">Donation</button>
-          <button id="history-tab" class="btn py-2 px-8 font-semibold text-lg ml-3">History</button>
-        </div>
+
         <!-- First Donation starts -->
         <div class="grid grid-cols-2 my-8 border border-slate-400 rounded-xl p-8">
           <div class="col-span-1">
@@ -92,19 +92,21 @@
               <div class="grid grid-cols-1">
                 <input id="first-input-number" class="w-full py-3 px-4 border my-4 border-slate-300 rounded-xl"
                   type="number" placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button id="btn-first-input" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <button id="btn-first-input" onclick="my_modal_5.showModal()"
+                  class="btn bg-btn-color font-bold text-xl">Donate Now</button>
                 <!-- Show Money Donation starts -->
-                <!-- onclick=" my_modal_1.showModal()" -->
-                <dialog id="my_modal_1" class="modal">
+                <!-- Open the modal using ID.showModal() method -->
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                   <div class="modal-box text-center">
                     <h3 class="text-4xl font-bold">Congrates!</h3>
-                    <img class="mx-auto my-5" src="assets/coin.png" alt="" srcset="">
+                    <img class="w-2/12 py-5 mx-auto" src="assets/coin.png" alt="">
                     <p class="py-4">You Have Donated for Humankind</p>
-                    <p class="font-bold">Successfully</p>
-                    <div class="modal-action">
-                      <form class="mx-auto">
-                        <button id="hover-btn-primary"
-                          class="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Close
+                    <h4 class="font-bold text-2xl">Successfully</h4>
+                    <div class="modal-action flex justify-center items-center">
+                      <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button
+                          class="btn text-center text-white font-bold text-lg btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Close
                           confirmation</button>
                       </form>
                     </div>
@@ -140,8 +142,9 @@
               <div class="grid grid-cols-1">
                 <input id="input-second" class="w-full py-3 px-4 border my-4 border-slate-300 rounded-xl" type="number"
                   placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button id="btn-second" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
-                <!-- onclick="my_modal_1.showModal()" -->
+                <button id="btn-second" onclick="my_modal_5.showModal()" class=" btn bg-btn-color font-bold
+                  text-xl">Donate Now</button>
+                <!-- " -->
               </div>
             </div>
           </div>
@@ -172,8 +175,9 @@
               <div class="grid grid-cols-1">
                 <input id="input-third" class="w-full py-3 px-4 border my-4 border-slate-300 rounded-xl" type="number"
                   placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button id="btn-third-element" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
-                <!-- onclick="my_modal_1.showModal()" -->
+                <button id="btn-third-element" onclick="my_modal_5.showModal()"
+                  class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+
               </div>
             </div>
           </div>
@@ -203,8 +207,8 @@
               <div class="grid grid-cols-1">
                 <input id="input-four-element" class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl"
                   type="number" placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button id="btn-four-input" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
-                <!-- onclick="my_modal_1.showModal()" -->
+                <button id="btn-four-input" onclick="my_modal_5.showModal()"
+                  class="btn bg-btn-color font-bold text-xl">Donate Now</button>
               </div>
             </div>
           </div>
@@ -234,19 +238,21 @@
               <div class="grid grid-cols-1">
                 <input id="input-five-element" class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl"
                   type="number" placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button id="btn-five-value" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
-                <!-- onclick="my_modal_1.showModal()" -->
+                <button id="btn-five-value" onclick="my_modal_5.showModal()" class=" btn bg-btn-color font-bold
+                  text-xl">Donate Now</button>
+                <!--" -->
               </div>
             </div>
           </div>
         </div>
         <!-- Five Donation ends -->
       </div>
-
     </section>
     <!-- Main section ends -->
     <!-- History section starts -->
-    <div id="history-add" class="hidden mx-auto w-5/6 "></div>
+    <div class=>
+      <div id="history-add" class="hidden mx-auto w-5/6 "></div>
+    </div>
     <!-- History section ends -->
     <!-- Important Question Element starts  -->
     <section id="important-question" class="hidden mx-auto justify-center w-5/6">
