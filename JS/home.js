@@ -8,11 +8,11 @@ document.getElementById('btn-first-input').addEventListener('click', function (e
   
   
   //Alert Function-------
-  if (isNaN(inputFirstValue)) {
+  if (isNaN (inputFirstValue)) {
     alert('Invalid Donation amount');
     return;
   }
- 
+  //Condition input Declare ----
   if (typeof inputFirstValue === 'number') {
     const mainFirstBalance = getTextFieldValueById('available-first-balance');
     // Math version
@@ -41,7 +41,7 @@ document.getElementById('btn-first-input').addEventListener('click', function (e
     document.getElementById('history-add').appendChild(div);
   }
   else {
-    alert('you are failed')
+    alert('Invalid Donation amount')
   }
   document.getElementById('first-input-number').value = '';
 })
@@ -54,13 +54,23 @@ document.getElementById('btn-second').addEventListener('click', function (event)
   const inputFirstValue = getInputFieldValueById('input-second');
   const balanceFirst = getTextFieldValueById('second-element');
   
-
+  //Alert declare ----
+  if (isNaN (inputFirstValue)) {
+    alert('Invalid Donation amount');
+    return;
+  }
+  //Condition declare------
   if (typeof inputFirstValue === 'number') {
     const mainFirstBalance = getTextFieldValueById('available-first-balance');
     // Math version
     const totalValue = mainFirstBalance - inputFirstValue;
     const sumDonation = balanceFirst + inputFirstValue;
     
+    //Alert Function-------
+    if (inputFirstValue > mainFirstBalance) {
+      alert('Invalid Donation amount');
+      return;
+    }
     document.getElementById('available-first-balance').innerText = totalValue;
     document.getElementById('second-element').innerText = sumDonation;
    
@@ -76,7 +86,7 @@ document.getElementById('btn-second').addEventListener('click', function (event)
     document.getElementById('history-add').appendChild(div);
   }
   else {
-    alert('you are failed')
+    alert('Invalid Donation amount');
   }
   document.getElementById('input-second').value = '';
 })
@@ -87,13 +97,23 @@ document.getElementById('btn-third-element').addEventListener('click', function 
   const inputFirstValue = getInputFieldValueById('input-third');
   const balanceFirst = getTextFieldValueById('third-element-balance');
   
-
+  //Alert Value declare-----
+  if (isNaN (inputFirstValue)) {
+    alert('Invalid Donation amount');
+    return;
+  }
+  //Condition Elements ----
   if (typeof inputFirstValue === 'number') {
     const mainFirstBalance = getTextFieldValueById('available-first-balance');
     // Math version
     const totalValue = mainFirstBalance - inputFirstValue;
     const sumDonation = balanceFirst + inputFirstValue;
     
+    //Alert Function-------
+    if (inputFirstValue > mainFirstBalance) {
+      alert('Invalid Donation amount');
+      return;
+    }
     document.getElementById('available-first-balance').innerText = totalValue;
     document.getElementById('third-element-balance').innerText = sumDonation;
    
@@ -109,7 +129,7 @@ document.getElementById('btn-third-element').addEventListener('click', function 
     document.getElementById('history-add').appendChild(div);
   }
   else {
-    alert('Invalid')
+    alert('Invalid Donation amount');
   }
   document.getElementById('input-third').value = '';
 })
@@ -122,13 +142,23 @@ document.getElementById('btn-four-input').addEventListener('click', function (ev
   const inputFirstValue = getInputFieldValueById('input-four-element');
   const balanceFirst = getTextFieldValueById('four-balance-input');
   
-
+  //Alert Value declare-----
+  if (isNaN (inputFirstValue)) {
+    alert('Invalid Donation amount');
+    return;
+  }
+  //Condition Elements-----
   if (typeof inputFirstValue === 'number') {
     const mainFirstBalance = getTextFieldValueById('available-first-balance');
     // Math version
     const totalValue = mainFirstBalance - inputFirstValue;
     const sumDonation = balanceFirst + inputFirstValue;
     
+    //Alert Function-------
+    if (inputFirstValue > mainFirstBalance) {
+      alert('Invalid Donation amount');
+      return;
+    }
     document.getElementById('available-first-balance').innerText = totalValue;
     document.getElementById('four-balance-input').innerText = sumDonation;
    
@@ -144,7 +174,7 @@ document.getElementById('btn-four-input').addEventListener('click', function (ev
     document.getElementById('history-add').appendChild(div);
   }
   else {
-    alert('you are failed')
+    alert('Invalid Donation amount');
   }
   document.getElementById('input-four-element').value = '';
 })
@@ -156,13 +186,23 @@ document.getElementById('btn-five-value').addEventListener('click', function (ev
   const inputFirstValue = getInputFieldValueById('input-five-element');
   const balanceFirst = getTextFieldValueById('element-five-balance');
   
-
+  //Alert Value declare-----
+  if (isNaN (inputFirstValue)) {
+    alert('Invalid Donation amount');
+    return;
+  }
+  //Condition Elements ----
   if (typeof inputFirstValue === 'number') {
     const mainFirstBalance = getTextFieldValueById('available-first-balance');
     // Math version
     const totalValue = mainFirstBalance - inputFirstValue;
     const sumDonation = balanceFirst + inputFirstValue;
     
+    //Alert Function-------
+    if (inputFirstValue > mainFirstBalance) {
+      alert('Invalid Donation amount');
+      return;
+    }
     document.getElementById('available-first-balance').innerText = totalValue;
     document.getElementById('element-five-balance').innerText = sumDonation;
    
@@ -178,7 +218,7 @@ document.getElementById('btn-five-value').addEventListener('click', function (ev
     document.getElementById('history-add').appendChild(div);
   }
   else {
-    alert('you are failed')
+    alert('Invalid Donation amount');
   }
   document.getElementById('input-five-element').value = '';
 })
