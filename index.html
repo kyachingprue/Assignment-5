@@ -41,27 +41,31 @@
 <body class="font-style">
   <main class="bg-body w-full">
     <!-- Navbar section starts -->
-    <section class="w-5/6 mx-auto grid grid-cols-3 py-5">
-      <div class="col-span-1 text-left">
-        <button class="btn bg-btn-color px-8 py-2 text-black font-semibold text-xl">Blog</button>
+    <section class="sticky top-0 bg-body">
+      <div class="w-5/6 mx-auto grid grid-cols-3 py-5">
+        <div class="col-span-1 text-left">
+          <button id="blog-input-elements"
+            class="btn bg-btn-color px-8 py-2 text-black font-semibold text-xl">Blog</button>
+        </div>
+        <div class="col-span-1 text-center gap-4 flex justify-center items-center">
+          <img src="assets/logo.png" alt="coin deposit logo images" srcset="">
+          <h4 class="font-bold text-black ">Donate Bangladesh</h4>
+        </div>
+        <div class="col-span-1 text-right flex justify-center items-center gap-3">
+          <img src="assets/coin.png" alt="coin logo images" srcset="">
+          <div id="available-first-balance" class="font-medium text-xl text-slate-700">500000</div>
+          <p class="font-bold text-black">BDT</p>
+        </div>
       </div>
-      <div class="col-span-1 text-center gap-4 flex justify-center items-center">
-        <img src="assets/logo.png" alt="coin deposit logo images" srcset="">
-        <h4 class="font-bold text-black ">Donate Bangladesh</h4>
-      </div>
-      <div class="col-span-1 text-right flex justify-center items-center gap-3">
-        <img src="assets/coin.png" alt="coin logo images" srcset="">
-        <div class="font-medium text-xl text-slate-700">500000</div>
-        <p class="font-bold text-black">BDT</p>
-      </div>
+      <div class="mx-auto w-full bg-body"></div>
     </section>
     <!-- Navbar section ends -->
     <!-- Main section starts -->
-    <section class="w-full mx-auto bg-white">
+    <section id="new-element-input" class="w-full mx-auto bg-white">
       <div class="w-5/6 mx-auto py-20">
         <div class="text-center ">
-          <button class="btn bg-btn-color py-2 px-8 font-semibold text-lg mr-3">Donation</button>
-          <button class="btn bg-btn-color py-2 px-8 font-semibold text-lg ml-3">History</button>
+          <button id="donation-tab" class="btn bg-btn-color py-2 px-8 font-semibold text-lg mr-3">Donation</button>
+          <button id="history-tab" class="btn py-2 px-8 font-semibold text-lg ml-3">History</button>
         </div>
         <!-- First Donation starts -->
         <div class="grid grid-cols-2 my-8 border border-slate-400 rounded-xl p-8">
@@ -69,13 +73,13 @@
             <img src="assets/noakhali.png" alt="noakhali donation images" srcset="">
           </div>
           <div class="col-span-1">
-            <div class="flex items-center gap-1">
+            <button class="btn flex items-center gap-1">
               <img src="assets/coin.png" alt="" srcset="">
-              <div class="font-bold">112</div>
+              <div id="first-input-balance" class="font-bold">112</div>
               <p class="text-sm font-bold">BDT</p>
-            </div>
-            <div class="py-4">
-              <h2 class="mt-4 mb-6 font-bold text-black text-xl">Donate for Flood at Noakhali, Bangladesh</h2>
+            </button>
+            <div class="py-2">
+              <h2 class="mt-3 mb-4 font-bold text-black text-xl">Donate for Flood at Noakhali, Bangladesh</h2>
               <p class="text-sm text-slate-500 leading-7 mb-3">The recent floods in Noakhali have caused significant
                 damage
                 to homes
@@ -86,9 +90,27 @@
                 difference. Please
                 join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
               <div class="grid grid-cols-1">
-                <input class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl" type="text"
-                  placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <input id="first-input-number" class="w-full py-3 px-4 border my-4 border-slate-300 rounded-xl"
+                  type="number" placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
+                <button id="btn-first-input" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <!-- Show Money Donation starts -->
+                <!-- onclick=" my_modal_1.showModal()" -->
+                <dialog id="my_modal_1" class="modal">
+                  <div class="modal-box text-center">
+                    <h3 class="text-4xl font-bold">Congrates!</h3>
+                    <img class="mx-auto my-5" src="assets/coin.png" alt="" srcset="">
+                    <p class="py-4">You Have Donated for Humankind</p>
+                    <p class="font-bold">Successfully</p>
+                    <div class="modal-action">
+                      <form class="mx-auto">
+                        <button id="hover-btn-primary"
+                          class="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Close
+                          confirmation</button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+                <!-- Show Money Donation ends -->
               </div>
             </div>
           </div>
@@ -100,14 +122,14 @@
             <img src="assets/feni.png" alt="Feni donation images" srcset="">
           </div>
           <div class="col-span-1">
-            <div class="flex items-center gap-1">
+            <button class="btn flex items-center gap-1">
               <img src="assets/coin.png" alt="" srcset="">
-              <div class="font-bold">112</div>
+              <div id="second-element" class="font-bold">112</div>
               <p class="text-sm font-bold">BDT</p>
-            </div>
-            <div class="py-4">
-              <h2 class="mt-4 mb-6 font-bold text-black text-xl">Donate for Flood Relief in Feni,Bangladesh</h2>
-              <p class="text-sm text-slate-500 leading-7 mb-3">The recent floods in Feni have devastated local
+            </button>
+            <div class="py-2">
+              <h2 class="mt-3 mb-4 font-bold text-black text-xl">Donate for Flood Relief in Feni,Bangladesh</h2>
+              <p class="text-sm text-slate-500 leading-7 mb-2">The recent floods in Feni have devastated local
                 communities, leading to severe disruption and loss. Your generous
                 donation will help provide immediate aid, including food, clean water, and medical supplies, to those
                 affected by this
@@ -116,9 +138,10 @@
                 contribution counts towards making a real difference. Please consider donating today to assist those in
                 urgent need..</p>
               <div class="grid grid-cols-1">
-                <input class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl" type="text"
+                <input id="input-second" class="w-full py-3 px-4 border my-4 border-slate-300 rounded-xl" type="number"
                   placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <button id="btn-second" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <!-- onclick="my_modal_1.showModal()" -->
               </div>
             </div>
           </div>
@@ -130,14 +153,14 @@
             <img src="assets/quota-protest.png" alt="quota-protest images" srcset="">
           </div>
           <div class="col-span-1">
-            <div class="flex items-center gap-1">
+            <button class="btn flex items-center gap-1">
               <img src="assets/coin.png" alt="" srcset="">
-              <div class="font-bold">112</div>
+              <div id="third-element-balance" class="font-bold">112</div>
               <p class="text-sm font-bold">BDT</p>
-            </div>
-            <div class="py-4">
-              <h2 class="mt-4 mb-6 font-bold text-black text-xl">Aid for Injured in the Quota Movement</h2>
-              <p class="text-sm text-slate-500 leading-7 mb-3">The recent Quota movement has resulted in numerous
+            </button>
+            <div class="py-2">
+              <h2 class="mt-2 mb-4 font-bold text-black text-xl">Aid for Injured in the Quota Movement</h2>
+              <p class="text-sm text-slate-500 leading-7 pb-3">The recent Quota movement has resulted in numerous
                 injuries and significant hardship for many individuals. Your support
                 is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By
                 contributing,
@@ -147,9 +170,10 @@
                 making a
                 donation to support these brave individuals in their time of need.</p>
               <div class="grid grid-cols-1">
-                <input class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl" type="text"
+                <input id="input-third" class="w-full py-3 px-4 border my-4 border-slate-300 rounded-xl" type="number"
                   placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <button id="btn-third-element" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <!-- onclick="my_modal_1.showModal()" -->
               </div>
             </div>
           </div>
@@ -162,26 +186,25 @@
               alt="noakhali donation images" srcset="">
           </div>
           <div class="col-span-1">
-            <div class="flex items-center gap-1">
+            <button class="btn flex items-center gap-1">
               <img src="assets/coin.png" alt="" srcset="">
-              <div class="font-bold">112</div>
+              <div id="four-balance-input" class="font-bold">112</div>
               <p class="text-sm font-bold">BDT</p>
-            </div>
+            </button>
             <div class="py-4">
               <h2 class="mt-4 mb-6 font-bold text-black text-xl">Donate for Flood at Khagrachari, Bangladesh</h2>
-              <p class="text-sm text-slate-500 leading-7 mb-3">The recent floods in Khagrachari have caused significant
-                damage
-                to homes
-                infrastructure.
-                Your donation
-                will help provide
-                essential supplies and to those affected by this disaster. Every contribution, big or small, makes
-                difference. Please
-                join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+              <p class="text-sm text-slate-500 leading-7 mb-3">The Chittagong Hill Tracts was loosely under the reign of
+                the Tripura State, the Arakans & the Sultans in different
+                times before it came under the control of the British East India Company in 1760. Although the British
+                got the authority
+                of the Chittagong Hill Tracts in 1760, they had no authority besides collecting nominal taxes. Until
+                1860, two kings or
+                chiefs governed the internal administration of this region. </p>
               <div class="grid grid-cols-1">
-                <input class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl" type="text"
-                  placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <input id="input-four-element" class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl"
+                  type="number" placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
+                <button id="btn-four-input" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <!-- onclick="my_modal_1.showModal()" -->
               </div>
             </div>
           </div>
@@ -194,26 +217,25 @@
               alt="noakhali donation images" srcset="">
           </div>
           <div class="col-span-1">
-            <div class="flex items-center gap-1">
+            <button class="btn flex items-center gap-1">
               <img src="assets/coin.png" alt="" srcset="">
-              <div class="font-bold">112</div>
+              <div id="element-five-balance" class="font-bold">112</div>
               <p class="text-sm font-bold">BDT</p>
-            </div>
+            </button>
             <div class="py-4">
               <h2 class="mt-4 mb-6 font-bold text-black text-xl">Donate for Flood at Rangamati, Bangladesh</h2>
-              <p class="text-sm text-slate-500 leading-7 mb-3">The recent floods in Rangamati have caused significant
-                damage
-                to homes
-                infrastructure.
-                Your donation
-                will help provide
-                essential supplies and to those affected by this disaster. Every contribution, big or small, makes
-                difference. Please
-                join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+              <p class="text-sm text-slate-500 leading-7 mb-3">Rangamati is the most popular destination in Chittagong
+                Hill Tracts covered by the scenic beauty of Kaptai Lake, plenty
+                of small hills and tribal people. The lake was made in 1960 dotted with island is undoubtedly beautiful.
+                Boat cruise
+                through the lake would be the best way to spend your day. This place is also inhabited by the many
+                indigenous group of
+                People like Chakma, Marma & Tripura. </p>
               <div class="grid grid-cols-1">
-                <input class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl" type="text"
-                  placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
-                <button class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <input id="input-five-element" class="w-full py-3 px-4 border my-5 border-slate-300 rounded-xl"
+                  type="number" placeholder="Write Donation Amount" class="input input-bordered w-full max-w-xs" />
+                <button id="btn-five-value" class="btn bg-btn-color font-bold text-xl">Donate Now</button>
+                <!-- onclick="my_modal_1.showModal()" -->
               </div>
             </div>
           </div>
@@ -223,8 +245,49 @@
 
     </section>
     <!-- Main section ends -->
+    <!-- History section starts -->
+    <div id="history-add" class="hidden mx-auto w-5/6 "></div>
+    <!-- History section ends -->
+    <!-- Important Question Element starts  -->
+    <section id="important-question" class="hidden mx-auto justify-center w-5/6">
+      <h3 class="font-bold text-4xl py-5 text-black pl-4">Important FAQ <img src="assets/" alt="" srcset=""></h3>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">How do you select on element from the DOM?</div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is
+          it useful?</div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using
+          the DOM?</div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+    </section>
+    <!-- Important Question Element ends  -->
   </main>
   <script src="JS/home.js"></script>
+  <script src="JS/utilities.js"></script>
+  <script src="JS/feature.js"></script>
+
 </body>
 
 </html>
